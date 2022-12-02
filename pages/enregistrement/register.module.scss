@@ -1,0 +1,183 @@
+$desactivated-color: #ececec;
+$button-height: 50px;
+$button-border-radius: $button-height / 2;
+$button-icon-color: $senary-text-color;
+.registrationContainer {
+   :global {
+      .header {
+         margin-bottom: 50px;
+         .title {
+            margin-bottom: 20px;
+         }
+      }
+      .main {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         gap: 60px;
+         flex-wrap: wrap;
+         .card {
+            position: relative;
+            &.inactive {
+               opacity: 0.4;
+            }
+            .button-container {
+               position: absolute;
+               bottom: -$button-height/2;
+               cursor: pointer;
+               .button {
+                  &:hover {
+                     background: $tertiary-bg-color;
+                     transition: all 0.7s ease;
+                  }
+               }
+            }
+         }
+         .input {
+            display: flex;
+            flex-direction: column;
+            label {
+               position: relative;
+               top: 12px;
+               left: 20px;
+               width: fit-content;
+               padding-left: 5px;
+               padding-right: 5px;
+               font-size: 14px;
+               background-color: $primary-bg-color;
+            }
+            input {
+               height: 50px;
+               border-radius: 25px;
+               padding-left: 20px;
+               padding-right: 20px;
+               border: 0.5px solid black;
+               &::placeholder {
+                  font-size: 12px;
+                  font-style: italic;
+                  opacity: 0.8;
+               }
+            }
+            &.error {
+               label {
+                  color: red;
+               }
+               input {
+                  border: 1px solid red;
+               }
+            }
+         }
+         .signup-on {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            padding: 30px;
+            .title {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               margin-bottom: 10px;
+               h3 {
+                  font-size: 20px;
+               }
+            }
+            .question {
+               display: flex;
+               justify-content: center;
+               margin-top: 40px;
+               margin-bottom: 30px;
+               span {
+                  font-size: 12px;
+                  strong {
+                     text-decoration: underline;
+                     cursor: pointer;
+                  }
+               }
+            }
+            .submit {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+         }
+         .signup-off {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            padding: 80px;
+            height: 200px;
+            cursor: pointer;
+         }
+         .signin-on {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            padding: 30px;
+            .title {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               h3 {
+                  font-size: 20px;
+               }
+            }
+            .forgot {
+               display: flex;
+               justify-content: flex-end;
+               margin-top: 5px;
+               margin-bottom: 50px;
+               span {
+                  text-decoration: underline;
+                  font-size: 10px;
+                  cursor: pointer;
+               }
+            }
+            .question {
+               display: flex;
+               justify-content: center;
+               margin-bottom: 30px;
+               span {
+                  font-size: 12px;
+                  strong {
+                     text-decoration: underline;
+                     cursor: pointer;
+                  }
+               }
+            }
+            .submit {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+         }
+         .signin-off {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            padding: 80px;
+            height: 200px;
+            cursor: pointer;
+            span {
+               font-weight: 500;
+               font-size: 12px;
+            }
+            h1 {
+               font-weight: 700;
+               font-size: 30px;
+            }
+         }
+      }
+      form {
+         width: 100%;
+      }
+   }
+}

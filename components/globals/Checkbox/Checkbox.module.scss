@@ -1,0 +1,19 @@
+.CheckboxContainer {
+   :global {
+      .checkbox-input {
+         display: flex;
+         align-items: center;
+         margin-top: 20px;
+         input {
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            accent-color: black;
+            cursor: pointer;
+         }
+         label {
+            cursor: pointer;
+         }
+      }
+   }
+}

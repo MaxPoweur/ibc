@@ -1,0 +1,25 @@
+.VisitsTabContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   :global {
+      .text-input-container {
+         background-color: white;
+         &.search-input-container {
+            width: 500px;
+            margin-bottom: 40px;
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--s) {
+   .VisitsTabContainer {
+      :global {
+         .text-input-container {
+            &.search-input-container {
+               width: 100%;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,74 @@
+$message-card-description-height: 30px;
+
+.mySpace {
+   :global {
+      .header {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 10px;
+         h2 {
+            margin-bottom: 5px;
+            .light {
+               font-size: 1.4rem;
+               font-weight: 300;
+            }
+         }
+         .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 15px;
+         }
+         .text-input-container {
+            background-color: white;
+         }
+         .right {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+         }
+      }
+      .skills {
+         padding: 20px 50px;
+         display: flex;
+         flex-wrap: wrap;
+         gap: 25px;
+      }
+      .cards-slider-container {
+         margin-bottom: 30px;
+         .slider {
+            .card {
+               padding-top: 55px;
+               h3 {
+                  font-size: 1rem;
+               }
+               p {
+                  font-size: 0.8rem;
+               } 
+               .date-delay {
+                  top: 15px;
+                  left: 15px;
+                  font-size: 0.8rem;
+               }
+            }
+            .new-item-card-container {
+               .new-item-card {
+                  .icon-container {
+                     border: 4px solid #b7b7b7;
+                     .icon {
+                        font-size: 2.4rem;
+                     }
+                  }
+               }
+            }
+         }
+      }
+      hr {
+         margin-top: 40px;
+         margin-bottom: 30px;
+         opacity: 0.4;
+      }
+   }
+}

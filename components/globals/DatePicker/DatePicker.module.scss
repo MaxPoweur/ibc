@@ -1,0 +1,41 @@
+.textInputContainer {
+   position: relative;
+   border: 1px solid #ababab;
+   padding: 0px 20px;
+   height: 50px;
+   border-radius: 40px;
+   display: flex;
+   align-items: center;
+   :global {
+      label {
+         position: absolute;
+         top: -15px;
+         left: 10px;
+         padding: 0 10px;
+         background-color: white;
+      }
+      .date-input {
+         flex: 1;
+         display: flex;
+         align-items: center;
+         flex: 1;
+         outline: 0;
+         border: 0;
+         background: transparent;
+         box-shadow: none;
+         &::placeholder {
+            font-style: italic;
+            color: rgba(0, 0, 0, 0.4);
+         }
+         .ant-picker-active-bar {
+            background: #747474!important;
+            height: 1.5px!important;
+         }
+         .suffix-container {
+            display: flex;
+            align-items: center;
+            margin-left: 6px;
+         }
+      }
+   }
+}

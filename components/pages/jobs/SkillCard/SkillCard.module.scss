@@ -1,0 +1,94 @@
+.SkillCardContainer {
+   :global {
+      .card {
+         width: 250px;
+         height: 145px;
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         padding: 30px 20px;
+         &.clickable {
+            cursor: pointer;
+            h4 {
+               cursor: pointer;
+            }
+            .description {
+               cursor: pointer;
+            }
+         }
+         .description {
+            text-align: center;
+            font-size: 0.9rem;
+         }
+         .stars {
+            display: flex;
+            column-gap: 5px;
+            margin-top: 10px;
+            .star {
+               font-size: 1.2rem;
+               &.unfilled {
+                  color: #e4e4e4;
+               }
+            }
+         }
+         .to-train {
+            position: absolute;
+            bottom: -7px;
+            right: -7px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 45px;
+            width: 45px;
+            border-radius: 50px;
+            background-color: #707070;
+            color: white;
+            font-size: 1.5rem;
+         }
+         .is-bookmark {
+            position: absolute;
+            top: -9px;
+            left: 10px;
+            z-index: 1000;
+         }
+         .header {
+            position: absolute;
+            top: 0;
+            background-color: $primary-color;
+            color: white;
+            width: 100%;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            font-size: 12px;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+         .close-icon-container {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            z-index: 1000;
+            &.white {
+               path {
+                  stroke: white;
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--lg) {
+   .SkillCardContainer {
+      :global {
+         .header {
+            align-items: center !important;
+         }
+      }
+   }
+}

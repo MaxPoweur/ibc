@@ -1,0 +1,77 @@
+.CardsSliderContainer {
+   :global {
+      .slider {
+         padding: 20px 50px;
+         .card {
+            width: 250px;
+            height: 145px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+         }
+         .swiper-button-next {
+            background-color: white;
+            height: 50px;
+            width: 50px;
+            color: #707070;
+            border-radius: 50px;
+            box-shadow: 0 0.275rem 0.75rem -0.0625rem rgb(0 0 0 / 25%), 0 0.125rem 0.4rem -0.0625rem rgb(11 15 25 / 3%);
+            &:after {
+               font-size: 1rem;
+               font-weight: 800;
+            }
+         }
+         .swiper-button-prev {
+            background-color: white;
+            height: 50px;
+            width: 50px;
+            color: #707070;
+            border-radius: 50px;
+            box-shadow: 0 0.275rem 0.75rem -0.0625rem rgb(0 0 0 / 25%), 0 0.125rem 0.4rem -0.0625rem rgb(11 15 25 / 3%);
+            &:after {
+               font-size: 1rem;
+               font-weight: 800;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--lg) {
+   .cards-slider-container {
+      .header {
+         .title-container {
+            margin-right: 20px;
+         }
+      }
+   }
+   .CardsSliderContainer {
+      :global {
+         .slider {
+            .card {
+               width: 90%; 
+            }
+         }
+      }
+   }
+}
+@media (max-width: 690px) {
+   .CardsSliderContainer {
+      :global {
+         .slider {
+            padding: 20px 25px;
+            .swiper-slide-prev {
+               right:20px; 
+            }
+            .swiper-slide-next {
+               left:20px; 
+            }
+            .card {
+               width: 100%; 
+            }
+         }
+      }
+   }
+}

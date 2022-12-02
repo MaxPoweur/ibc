@@ -1,0 +1,468 @@
+.SkillsStepContainer {
+   :global {
+      h1 {
+         padding: 0px 25px;
+      }
+      .header {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 20px;
+         h2 {
+            margin-bottom: 5px;
+         }
+         .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 15px;
+         }
+         .text-input-container {
+            background-color: white;
+         }
+         .right {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+         }
+      }
+      .skills {
+         padding: 20px 50px;
+         display: flex;
+         flex-wrap: wrap;
+         gap: 25px;
+      }
+      .cards-slider-container {
+         margin-bottom: 80px;
+         .new-item-card-container {
+            .new-item-card {
+               width: 250px;
+               .icon-container {
+                  border: 3px solid #b7b7b7;
+                  .icon {
+                     font-size: 2rem;
+                  }
+               }
+            }
+         }
+      }
+      .add-skills-popup {
+         .form-container {
+            overflow: auto;
+            max-height: 100%;
+            h3 {
+               font-size: 1rem;
+               margin-bottom: 10px;
+            }
+            p, span, label {
+               font-size: 0.8rem;
+            }
+            .activities {
+               padding-right: 20px;
+               .activity-container {
+                  .rows {
+                     margin-bottom: 20px;
+                     display: flex;
+                     justify-content: center;
+                     flex-direction: column;
+                     .row {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                        padding-bottom: 2px;
+                        margin-bottom: 2px;
+                        &.enabled {
+                           .icon {
+                              cursor: pointer;
+                           }
+                        }
+                        .left {
+                           display: flex;
+                           align-items: center;
+                           .checkbox-container {
+                              .checkbox-input {
+                                 margin-top: initial;
+                              }
+                           }
+                        }
+                        .right {
+                           display: flex;
+                           align-items: center;
+                           .usefullness {
+                              font-style: italic;
+                              margin-right: 20px;
+                              width: 100px;
+                              text-align: right;
+                           }
+                           .icon {
+                              font-size: 1.4rem;
+                              margin-right: 5px;
+                              &.to-train {
+                                 font-size: 2.4rem;
+                                 border-left: 1px solid #f0f0f0;
+                                 padding-left: 14px;
+                                 margin-left: 10px;
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            .button-container {
+               display: flex;
+               justify-content: center;
+            }
+         }
+      }
+      .bottom-popup-container {
+         .icon {
+            &.disabled {
+               color: #e4e4e4;
+            }
+         }
+         .to-train {
+            &.disabled {
+               color: #e4e4e4;
+            }
+         }
+      }
+      .activities-block {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         margin-top: 20px;
+         margin-bottom: 40px;
+         padding: 20px;
+         border-radius: 15px;
+         background-color: #e4e4e4;
+         .left {
+            display: flex;
+            flex-direction: column;
+            .title {
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               h2 {
+                  margin-right: 20px;
+                  margin-bottom: 0;
+               }
+            }
+         }
+         .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            border-radius: 100px;
+            padding: 15px 15px;
+            margin-left: 50px;
+            background-color: #bebebe;
+            .select-box {
+               margin-right: 30px;
+               .select-input-container {
+                  background-color: white;
+                  width: 400px;
+               }
+            }
+            .add-button {
+               display: flex;
+               align-items: center;
+               white-space: nowrap;
+               span {
+                  margin-left: 10px;
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--xl) {
+   .SkillsStepContainer{
+      :global {
+         .header {
+            flex-direction: column;
+            .title-container {
+               margin-bottom: 20px;
+            }
+         }
+         .activities-block {
+            flex-direction: column;
+            .left {
+               margin-bottom: 10px;
+            }
+            .right {
+               margin-left: 0;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--lg) {
+   .SkillsStepContainer{
+      :global {
+         .header {
+            .right {
+               .button-container {
+                  display: none;
+               }
+            }
+         }
+         .add-skills-popup {
+            .form-container {
+               h2 {
+                  display: block;
+                  font-weight: 500;
+               }
+               .activities {
+                  .activity-container {
+                     .rows {
+                        .row {
+                           border: 1px solid rgba(0, 0, 0, 0.1);
+                           border-radius: 15px;
+                           padding: 10px 10px;
+                           margin-right: 5px;
+                           margin-left: 5px;
+                           margin-bottom: 25px;
+                           .left {
+                              .checkbox-input {
+                                 margin-top: 15px;
+                              }
+                           }
+                           .right {
+                              .row {
+                                 margin-top: 15px;
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+         .cards-slider-container {
+            .new-item-card-container {
+               .new-item-card {
+                  width: 90%;
+               }
+            }
+         }
+         .activities-block {
+            .right {
+               justify-content: center;
+               background-color: unset;
+               width: 100%;
+               flex-direction: column;
+               padding: 15px 0;
+               .select-box {
+                  width: 100%;
+                  margin-right: 0;
+                  margin-bottom: 20px;
+                  .input-container {
+                     width: 100%;
+                  }
+               }
+               .button-container {
+                  width: 100%;
+                  button {
+                     padding: 0;
+                     width: 100%;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--m) {
+   .SkillsStepContainer {
+      :global {
+         .add-skills-popup {
+            .form-container {
+               h2 {
+                  display: block;
+                  font-weight: 500;
+                  font-size: 1.6rem;
+               }
+               .activities {
+                  .activity-container {
+                     .rows {
+                        .row {
+                           position: relative;
+                           flex-direction: column;
+                           align-items: flex-start;
+                              .right {
+                                 .icon {
+                                    &.to-train {
+                                       &.false {
+                                          color: rgba(0, 0, 0, 1);
+                                       }
+                                    }
+                                 }
+                              }
+                           .left {
+                              padding-left: 50px;
+                                 .input-container {
+                                    .checkbox-input {
+                                       input {
+                                          position: absolute; 
+                                          left: 20px;
+                                          top: 50%;
+                                          transform: translateY(-50%);
+                                       }
+                                    }
+                                 }
+                           }
+                           .right {
+                              padding-left: 50px;
+                              .icon {
+                                 font-size: 1.2rem;
+                                 &.to-train {
+                                    -webkit-box-shadow: 6px 6px 6px 3px rgba(0,0,0,0.1); 
+                                    box-shadow: 6px 6px 6px 3px rgba(0,0,0,0.1);
+                                    position: absolute;
+                                    bottom: -10px;
+                                    right: -10px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    height: 50px;
+                                    width: 50px;
+                                    border-radius: 50px;
+                                    background-color: #D5D5D5;
+                                    color: rgba(0, 0, 0, 0.2);
+                                    font-size: 1.5rem;
+                                    padding: 13px;
+                                 }
+                              }
+                              .usefullness {
+                                 order: 2;
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--s) {
+   .SkillsStepContainer {
+      :global {
+         .add-skills-popup {
+            .form-container {
+               h2 {
+                  margin-top: 5px;
+                  font-size: 1rem;
+                  margin-bottom: 10px;
+                  line-height: initial;
+               }
+               p, span, label {
+                  font-size: 0.7rem;
+               }
+               .activities {
+                  .activity-container {
+                     .rows {
+                        .row {
+                           position: relative;
+                           margin-bottom: 10px;
+                           &:last-of-type {
+                              margin-bottom: 0;
+                           }
+                           .left {
+                              padding-left: 40px;
+                                 .input-container {
+                                    .checkbox-input {
+                                       input {
+                                          position: absolute; 
+                                          left: 20px;
+                                          top: 50%;
+                                          transform: translateY(-50%);
+                                       }
+                                    }
+                                 }
+                           }
+                           .right {
+                              padding-left: 40px;
+                              .icon {
+                                 font-size: 1.1rem;
+                                 &:nth-child(2), &:nth-child(3) {
+                                    display: none;
+                                 }
+                              }
+                              .to-train {
+                                 position: absolute;
+                                 right: -15px;
+                                 bottom: 15px;
+                                 height: 30px;
+                                 width: 30px;
+                                 background-color: $primary-color;
+                                 border-radius: 100%;
+                                 display: flex;
+                                 justify-content: center;
+                                 align-items: center;
+                                 &.disabled {
+                                    background-color: #cacaca;
+                                 }
+                                 .icon {
+                                    font-size: 1.1rem;
+                                    margin-right: 0;
+                                    color: #fff;
+                                 }
+                              }
+                              .usefullness {
+                                 order: 2;
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: 690px) {
+   .SkillsStepContainer {
+      :global {
+         .cards-slider-container {
+            &:last-child {
+               margin-bottom: 0px;
+            }
+            .new-item-card-container {
+               .new-item-card {
+                  width: 100%;
+               }
+            }
+         }
+         .swiper {
+            padding: 20px 25px;
+            .swiper-button-next {
+               right:20px; 
+            }
+            .swiper-button-prev {
+               left:20px; 
+            }
+            .card {
+               width: 100%; 
+            }
+         }
+      }
+   }
+}
+@media (max-width: 490px) {
+   .SkillsStepContainer {
+      :global {
+         .header {
+            .right {
+               width: 100%;
+            }
+         }
+      }
+   }
+}

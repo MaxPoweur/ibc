@@ -1,0 +1,39 @@
+.NewItemCardContainer {
+   :global {
+      .new-item-card {
+         padding: 0!important;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border: 3px dashed #b7b7b7;
+         border-radius: 15px;
+         cursor: pointer;
+         width: 400px;
+         .icon-container {
+            border: 5px solid #b7b7b7;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .icon {
+               color: #b7b7b7;
+               font-size: 3.5rem;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--lg) {
+   .NewItemCardContainer {
+      :global {
+         .new-item-card {
+            .icon-container {
+               .icon {
+                  font-size: 2.5rem !important;
+               }
+            }
+         }
+      }
+   }  
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="63.333" viewBox="0 0 40 63.333">
+  <defs>
+    <filter id="Tracé_12" x="0" y="0" width="40" height="63.333" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="référentiel" transform="translate(-379 6)">
+    <g transform="matrix(1, 0, 0, 1, 379, -6)" filter="url(#Tracé_12)">
+      <path id="Tracé_12-2" data-name="Tracé 12" d="M0,0H22V45.333L11.208,38.358,0,45.333Z" transform="translate(9 6)" fill="#676767"/>
+    </g>
+    <path id="Tracé_13" data-name="Tracé 13" d="M0,0,4.876,5.115H0Z" transform="translate(410)"/>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+.LanguagesTabContainer {
+   :global {
+      .cards-slider-container {
+         margin-bottom: 60px;
+         .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            h2 {
+               margin-bottom: 5px;
+            }
+            .title-container {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               column-gap: 15px;
+            }
+            .text-input-container {
+               background-color: white;
+            }
+         }
+         .cards-slider-container {
+            .card {
+               .description {
+                  text-align: center;
+                  font-size: 0.9rem;
+               }
+            }
+         }
+      }
+   }
+}

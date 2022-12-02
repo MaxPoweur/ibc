@@ -1,0 +1,15 @@
+.myCareer {
+   :global {
+      .page {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         margin-top: 200px;
+      }
+   }
+   h1,
+   h4 {
+      color: rgba(0, 0, 0, 0.4);
+   }
+}

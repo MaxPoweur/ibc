@@ -1,0 +1,153 @@
+.OthersStepContainer {
+   :global {
+      h1 {
+         background: #e4e4e4;
+         padding: 15px 25px;
+         display: flex;
+         align-items: center;
+         border-radius: 10px;
+         margin-bottom: 30px;
+      }
+      .header {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 20px;
+         h2 {
+            margin-bottom: 5px;
+         }
+         .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 15px;
+         }
+         .text-input-container {
+            background-color: white;
+         }
+         .right {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+         }
+      }
+      .cards-slider-container {
+         margin-bottom: 80px;
+         .new-item-card-container {
+            .new-item-card {
+               width: 250px;
+               .icon-container {
+                  border: 3px solid #b7b7b7;
+                  .icon {
+                     font-size: 2rem;
+                  }
+               }
+            }
+         }
+      }
+      .bottom-popup-container {
+         h2 {
+            font-weight: 400;
+            margin-bottom: 40px;
+         }
+         b {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 30px;
+         }
+         .radio-boxes-container {
+            .option-container {
+               display: flex;
+               align-items: center;
+               column-gap: 6px;
+               .icon {
+                  font-size: 1rem;
+               }
+               .stars-container {
+                  display: flex;
+                  align-items: center;
+                  column-gap: 2px;
+               }
+            }
+         }
+         .input-container {
+            margin-bottom: 40px;
+         }
+         .button-container {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--xl) {
+   .OthersStepContainer{
+      :global {
+         .header {
+            .title-container {
+               margin-bottom: 20px;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--lg) {
+   .OthersStepContainer{
+      :global {
+         .header {
+
+            .title-container {
+               margin-right: 20px;
+            }
+         }
+         .cards-slider-container {
+            .new-item-card-container {
+               .new-item-card {
+                  width: 90%;
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: 690px) {
+   .OthersStepContainer {
+      :global {
+         .cards-slider-container {
+            &:last-child {
+               margin-bottom: 0px;
+            }
+            .new-item-card-container {
+               .new-item-card {
+                  width: 100%;
+               }
+            }
+         }
+         .swiper {
+            padding: 20px 25px;
+            .swiper-button-next {
+               right:20px; 
+            }
+            .swiper-button-prev {
+               left:20px; 
+            }
+            .card {
+               width: 100%; 
+            }
+         }
+      }
+   }
+}
+@media (max-width: 490px) {
+   .OthersStepContainer {
+      :global {
+         .header {
+            .right {
+               width: 100%;
+            }
+         }
+      }
+   }
+}

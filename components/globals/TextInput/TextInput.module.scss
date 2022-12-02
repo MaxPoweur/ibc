@@ -1,0 +1,38 @@
+.textInputContainer {
+   position: relative;
+   border: 1px solid #ABABAB;
+   padding: 0px 20px;
+   height: 50px;
+   border-radius: 40px;
+   display: flex;
+   align-items: center;
+   :global {
+      label {
+         position: absolute;
+         top: -15px;
+         left: 10px;
+         padding: 0 10px;
+         background-color: white;
+      }
+      .text-input {
+         flex: 1;
+         display: flex;
+         align-items: center;
+         input {
+            flex: 1;
+            outline: 0;
+            border: 0;
+            background: transparent;
+            &::placeholder {
+               font-style: italic;
+               color: rgba(0, 0, 0, 0.4);
+            }
+         }
+         .suffix-container {
+            display: flex;
+            align-items: center;
+            margin-left: 6px;
+         }
+      }
+   }
+}

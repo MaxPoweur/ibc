@@ -1,0 +1,88 @@
+.RecruitmentNeedsTabContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   :global {
+      .text-input-container {
+         background-color: white;
+         &.search-input-container {
+            width: 500px;
+            margin-bottom: 50px;
+         }
+      }
+      .jobs {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 30px;
+         .card {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 250px;
+            height: 125px;
+            padding: 40px;
+            h4 {
+               cursor: pointer;
+            }
+            .key-position-icon {
+               cursor: pointer;
+               position: absolute;
+               top: -20px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               background-color: #707070;
+               height: 50px;
+               width: 50px;
+               border-radius: 50px;
+               font-size: 1.4rem;
+               path {
+                  stroke: white;
+               }
+            }
+         }
+      }
+      .right-popup {
+         .title {
+            margin-bottom: 30px;
+         }
+         .last-visit {
+            font-size: 0.8rem;
+            font-style: italic;
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--xl) {
+   .RecruitmentNeedsTabContainer {
+      :global {
+         .jobs {
+            gap: 20px;
+            justify-content: center;
+            .card {
+               width: 300px;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--lg) {
+   .RecruitmentNeedsTabContainer {
+      :global {
+         .jobs {
+            .card {
+               &:not(:last-child) {
+                  margin-bottom: 25px;
+               }
+               width: 100%;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,19 @@
+.RecruitmentNeedsStepContainer {
+   :global {
+      .card {
+         padding: 30px 40px;
+         h2 {
+            text-align: center;
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--s) {
+   .RecruitmentNeedsStepContainer {
+      :global {
+            .card {
+               padding: 20px 25px; 
+            }
+      }
+   }
+}

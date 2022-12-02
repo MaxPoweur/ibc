@@ -1,0 +1,63 @@
+$primary-color: #1d4278;
+$primary-color-hover: #152f56;
+// text color
+$primary-text-color: #fff;
+$secondary-text-color: #000;
+$tertiary-text-color: $primary-color;
+$quaternary-text-color: #7a7a7a;
+$quinary-text-color: #676767;
+$senary-text-color: #cccccc;
+
+// background color
+$primary-bg-color: #fff;
+$secondary-bg-color: rgb(116 116 116);
+$tertiary-bg-color: rgb(78 78 78);
+$quaternary-bg-color: linear-gradient(to right, rgb(247 247 247) 0%, rgb(227 227 227) 100%);
+$quinary-bg-color: rgb(235, 235, 235);
+$senary-bg-color: #a1a1a1;
+
+$light-grey: #efefef;
+
+// hover background color
+$primary-bg-hover-color: #efefef;
+$secondary-bg-hover-color: linear-gradient(to top, rgb(255, 255, 255) 30%, rgb(236, 236, 236) 90%);
+$tertiary-bg-hover-color: #d6d6d6;
+$quinary-bg-hover-color: rgb(218, 218, 218);
+$senary-bg-hover-color: #868686;
+
+$custom-red: #de171a;
+
+// layout height
+$topbar-main-height: 80px;
+$topbar-bottom-height: 50px;
+$topbar-height: $topbar-main-height + $topbar-bottom-height;
+$footer-height: 100px;
+
+$full-height: 100vh;
+$full-height-no-topbar: calc($full-height - $topbar-height);
+$full-page-no-footer: calc($full-height-no-topbar - $footer-height);
+
+$page-section-vertical-padding: 4.5rem;
+
+$main-font: "TTNorms", "Montserrat", sans-serif;
+$secondary-font: "Poppins", sans-serif;
+
+$h1-size: 2.2rem;
+$h2-size: 1.6rem;
+$h3-size: 1.1rem;
+$h4-size: 0.9rem;
+$text-size: 0.9rem;
+
+// $text-size: 1rem;
+
+$border-radius: 36px;
+
+$box-shadow: 0 0.275rem 0.75rem -0.0625rem rgb(11 15 25 / 6%), 0 0.125rem 0.4rem -0.0625rem rgb(11 15 25 / 3%);
+
+//css breakpoints :
+$css-breakpoint--xs: 0;
+$css-breakpoint--s: 576px;
+$css-breakpoint--m: 768px;
+$css-breakpoint--lg: 992px;
+$css-breakpoint--xl: 1200px;
+$css-breakpoint--xxl: 1400px;

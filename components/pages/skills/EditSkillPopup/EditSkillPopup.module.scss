@@ -1,0 +1,51 @@
+.EditSkillPopupContainer {
+   :global {
+   .edit-skill-popup {
+      max-width: 600px;
+      height: fit-content;
+      h2 {
+         font-weight: 400;
+         margin-bottom: 40px;
+      }
+      b {
+         display: block;
+         font-weight: 600;
+         margin-bottom: 30px;
+      }
+      .radio-boxes-container {
+         .option-container {
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
+            .icon {
+               font-size: 1rem;
+            }
+            .stars-container {
+               display: flex;
+               align-items: center;
+               column-gap: 2px;
+            }
+         }
+      }
+      .input-container {
+         margin-bottom: 30px;
+      }
+      .button-container {
+         margin-top: 100px;
+         display: flex;
+         justify-content: center;
+      }
+   }
+}
+}
+@media (max-width: $css-breakpoint--lg) {
+   .EditSkillPopupContainer {
+      :global {
+         .edit-skill-popup {
+            .button-container {
+               margin-top: 50px;
+            }
+         }
+      }
+   }
+}

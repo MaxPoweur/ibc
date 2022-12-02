@@ -1,0 +1,35 @@
+.VisitCardContainer {
+   :global {
+      .card {
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 200px;
+         width: 400px;
+         padding: 20px;
+         .date-delay {
+            font-size: 0.8rem;
+            font-style: italic;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+         }
+         .object {
+            text-align: center;
+         }
+         &.clickable {
+            .company-name {
+               cursor: pointer;
+            }
+            .object {
+               cursor: pointer;
+            }
+            .date-delay {
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}

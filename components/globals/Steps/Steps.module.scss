@@ -1,0 +1,149 @@
+.StepsContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   :global {
+      .mandatory {
+         margin-bottom: 20px;
+      }
+      .steps {
+         display: flex;
+         column-gap: 50px;
+         margin-bottom: 40px;
+         .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+            cursor: pointer;
+            .step-number {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               width: 60px;
+               height: 60px;
+               border-radius: 50px;
+               font-size: 1.4rem;
+               margin-bottom: 15px;
+            }
+            .step-name {
+               color: black;
+               text-align: center;
+            }
+            &.done {
+               .step-number {
+                  color: white;
+                  background-color: $primary-color;
+               }
+            }
+            &.active {
+               .step-number {
+                  color: black;
+                  background-color: white;
+                  font-weight: 600;
+                  box-shadow: $box-shadow;
+               }
+               .step-name {
+                  font-weight: 500;
+               }
+            }
+            &.to-do {
+               .step-number {
+                  color: white;
+                  background-color: #AEAEAE;
+               }
+               .step-name {
+                  color: #AEAEAE;
+               }
+            }
+         }
+      }
+      .step-content {
+         width: 100%;
+         margin-bottom: 40px;
+      }
+      .navigation {
+         display: flex;
+         width: 100%;
+         margin-top: 50px;
+         .button {
+            font-weight: 500;
+         }
+         .previous {
+            margin-right: auto;
+         }
+         .next {
+            margin-left: auto;
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--m) {
+   .StepsContainer {
+      :global {
+         .mandatory {
+            text-align: center;
+         }
+         .steps {
+            .step {
+               width: 55px;
+               .step-number {
+                  width: 40px;
+                  height: 40px; 
+                  font-size: 1.3rem;
+               }
+            }
+         }
+         .navigation {
+            justify-content: center; 
+            .button-container {
+               margin-left: unset;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--s) {
+   .StepsContainer {
+      :global {
+         .steps {
+            column-gap: 30px; 
+            .step {
+               &:not(.active) {
+                  .step-name {
+                     opacity: 0;
+                  }
+               }
+               width: 30px;
+               .step-name {
+                  font-size: 0.8rem;
+               }
+               .step-number {
+                  width: 35px;
+                  height: 35px; 
+                  font-size: 1.1rem;
+               }
+            }
+         }
+         .navigation {
+            margin-top: 10px;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+            .button-container {
+               &.previous {
+                  margin-right: unset;
+               }
+               &.next {
+                  margin-bottom: 40px;
+               }
+               width: 100%;
+               button {
+                  width: 100%;
+               }
+            }
+         }
+      }
+   }
+}

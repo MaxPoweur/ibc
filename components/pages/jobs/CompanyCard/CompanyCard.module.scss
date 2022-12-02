@@ -1,0 +1,41 @@
+.CompanyCardContainer {
+   :global {
+      .card {
+         width: 250px;
+         height: 145px;
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         padding: 30px 20px;
+         &.clickable {
+            cursor: pointer;
+            h4 {
+               cursor: pointer;
+            }
+            .description {
+               cursor: pointer;
+            }
+         }
+         .description {
+            text-align: center;
+            font-size: 0.9rem;
+         }
+         .last-visit {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-style: italic;
+            font-size: 0.8em;
+         }
+         .close-icon-container {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 0.8rem;
+            cursor: pointer;
+         }
+      }
+   }
+}

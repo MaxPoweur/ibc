@@ -1,0 +1,19 @@
+.CompanyContainer {
+   :global {
+      .header {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         margin-bottom: 50px;
+      }
+   }
+}
+@media (max-width: $css-breakpoint--lg) {
+   .CompanyContainer {
+      :global {
+         .header {
+            margin-bottom: 25px;
+         }
+      }
+   }
+}

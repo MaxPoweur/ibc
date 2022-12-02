@@ -1,0 +1,32 @@
+.RecruitmentNeedFormContainer {
+   :global {
+      .two-items {
+         display: flex;
+         column-gap: 15px;
+         .text-input-container {
+            flex: 1;
+         }
+      }
+      .input-container {
+         margin-bottom: 20px;
+      }
+      .input,
+      .textarea {
+         label {
+            background-color: white;
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--s) {
+   .RecruitmentNeedFormContainer {
+      :global {
+         .two-items {
+            flex-direction: column;
+            .input-container {
+               min-height: 50px;
+            }
+         }
+      }
+   }
+}

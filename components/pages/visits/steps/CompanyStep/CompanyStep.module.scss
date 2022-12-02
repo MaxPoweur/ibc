@@ -1,0 +1,80 @@
+.CompanyStepContainer {
+   display: flex;
+   flex-direction: column;
+   :global {
+      .cards {
+         display: grid;
+         gap: 40px;
+         grid-template-columns: 1fr 1fr;
+         .card {
+            padding: 30px 50px;
+            position: relative;
+            h3 {
+               margin-bottom: 30px;
+            }
+            .text-input-container {
+               label {
+                  background-color: white;
+               }
+            }
+            .button {
+               position: absolute;
+               bottom: 30px;
+               right: 50px;
+            }
+         }
+      }
+      .bottom-popup-container {
+         h3 {
+            margin-bottom: 40px;
+         }
+         .radio-boxes-container {
+            margin-bottom: 20px;
+         }
+         label {
+            background-color: white;
+         }
+         .button-container {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--m) {
+   .CompanyStepContainer {
+      :global {
+         .mandatory {
+            text-align: center; 
+         }
+         .cards {
+            grid-template-columns: unset;
+            .card {
+               position: relative;
+               .button-container {
+                  margin-top:40px;
+                  button {
+                     position: absolute;
+                     bottom: -25px;
+                     left: 50%;
+                     width: 90%;
+                     transform: translate(-50%,0);
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--s) {
+   .CompanyStepContainer {
+      :global {
+         .cards {
+            .card {
+               padding: 20px 25px; 
+            }
+         }
+      }
+   }
+}

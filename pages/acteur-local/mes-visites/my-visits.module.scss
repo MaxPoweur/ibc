@@ -1,0 +1,20 @@
+.myVisits {
+   :global {
+      .header {
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 40px;
+         .title-container {
+            display: flex;
+            align-items: center;
+            h1 {
+               margin-right: 1rem;
+               margin-bottom: 4px;
+            }
+         }
+         .text-input-container {
+            background-color: white;
+         }
+      }
+   }
+}

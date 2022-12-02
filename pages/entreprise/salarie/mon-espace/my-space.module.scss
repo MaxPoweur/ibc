@@ -1,0 +1,201 @@
+.mySpace {
+   :global {
+      .activities-block {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         margin-top: 20px;
+         margin-bottom: 40px;
+         padding: 20px;
+         border-radius: 15px;
+         background-color: #e4e4e4;
+         .left {
+            display: flex;
+            flex-direction: column;
+            .title {
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               h2 {
+                  margin-right: 20px;
+                  margin-bottom: 0;
+               }
+            }
+         }
+         .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            border-radius: 100px;
+            padding: 15px 15px;
+            margin-left: 50px;
+            background-color: #bebebe;
+            .select-box {
+               margin-right: 30px;
+               .select-input-container {
+                  background-color: white;
+                  width: 400px;
+               }
+            }
+            .add-button {
+               display: flex;
+               align-items: center;
+               white-space: nowrap;
+               span {
+                  margin-left: 10px;
+               }
+            }
+         }
+      }
+      .header {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+         margin-bottom: 10px;
+         h2 {
+            margin-bottom: 5px;
+            .light {
+               font-size: 1.4rem;
+               font-weight: 300;
+            }
+         }
+         .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 15px;
+         }
+         .text-input-container {
+            background-color: white;
+         }
+         .right {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+         }
+      }
+      .skills {
+         padding: 20px 50px;
+         display: flex;
+         flex-wrap: wrap;
+         gap: 25px;
+      }
+      .cards-slider-container {
+         margin-bottom: 30px;
+         .new-item-card-container {
+            .new-item-card {
+               width: 250px;
+               .icon-container {
+                  border: 3px solid #b7b7b7;
+                  .icon {
+                     font-size: 2rem;
+                  }
+               }
+            }
+         }
+      }
+      .add-skills-popup {
+         max-width: 600px;
+         max-height: 800px;
+         padding: 40px 70px;
+         h2 {
+            font-weight: 400;
+            margin-bottom: 30px;
+         }
+         h3 {
+            margin-bottom: 40px;
+         }
+         .label {
+            font-weight: 500;
+            margin-bottom: 10px;
+         }
+         .textarea-container, .radio-boxes-container {
+            margin-bottom: 30px;
+         }
+         .button {
+            margin: auto;
+         }
+         .radio-boxes-container {
+            .label-container {
+               display: flex;
+               align-items: center;
+               .stars-container {
+                  margin-left: 6px;
+                  display: flex;
+                  align-items: center;
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--xl) {
+   .mySpace {
+      :global {
+         .activities-block {
+            flex-direction: column;
+            .left {
+               margin-bottom: 10px;
+            }
+            .right {
+               margin-left: 0;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--lg) {
+   .mySpace {
+      :global {
+         .activities-block {
+            .right {
+               justify-content: center;
+               background-color: unset;
+               width: 100%;
+               flex-direction: column;
+               padding: 15px 0;
+               .select-box {
+                  width: 100%;
+                  margin-right: 0;
+                  margin-bottom: 20px;
+                  .input-container {
+                     width: 100%;
+                  }
+               }
+               .button-container {
+                  width: 100%;
+                  button {
+                     padding: 0;
+                     width: 100%;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--m) {
+   .mySpace {
+      :global {
+         .cards-slider-container {
+            .new-item-card-container {
+               .new-item-card {
+                  width: 100%;
+               }
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--s) {
+   .mySpace {
+      :global {
+         .add-skills-popup {
+            padding: 40px 30px;
+            height: auto;
+         }
+      }
+   }
+}

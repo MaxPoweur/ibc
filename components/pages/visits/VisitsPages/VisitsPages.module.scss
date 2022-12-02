@@ -1,0 +1,129 @@
+.VisitsPagesContainer {
+   :global {
+      .visit-card {
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+      }
+      .visits {
+         display: flex;
+         flex-wrap: wrap;
+         margin-bottom: 40px;
+         .new-item-card-container {
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+         }
+         .new-item-card {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px dashed #b7b7b7;
+            border-radius: 15px;
+            .icon-container {
+               border: 5px solid #b7b7b7;
+               border-radius: 50px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               .icon {
+                  color: #b7b7b7;
+                  font-size: 3.5rem;
+               }
+            }
+         }
+         .card {
+            cursor: pointer;
+            width: 400px;
+         }
+      }
+      .right-popup {
+         display: flex;
+         flex-direction: column;
+         .header {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+         }
+         .content-block {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+         }
+         .linked-files {
+            margin-bottom: 50px;
+            font-style: italic;
+            text-decoration: underline;
+         }
+         .button-container {
+            display: flex;
+            justify-content: center;
+            .button {
+               padding-left: 40px;
+               padding-right: 40px;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--xl) {
+   .VisitsPagesContainer{
+      :global {
+         .visit-card{
+               padding: 10px;
+               width: 33.33%;
+         }         
+         .visits {
+            .new-item-card-container {
+               width: 33.33%;
+               padding: 10px;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--m) {
+   .VisitsPagesContainer{
+      :global {
+         .visit-card{
+               padding: 10px;
+               width: 50%;
+         }
+         .visits {
+            .new-item-card-container {
+               width: 50%;
+               padding: 10px;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--s) {
+   .VisitsPagesContainer{
+      :global {
+         .visit-card{
+               padding: 10px;
+               width: 100%;
+               .card {
+                  height: 175px; 
+                  width: 100% !important;
+               }
+         }
+         .visits {
+            .new-item-card-container {
+               width: 100%;
+               padding: 10px;
+               .card {
+                  width: 100%;
+                  height: 100px;
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,110 @@
+$round-button-dimension: 60px;
+
+.cardContainer {
+   flex: 1;
+   min-width: 425px;
+   :global {
+      .card-header {
+         position: relative;
+         padding: 20px 25px;
+         border-top-left-radius: 15px;
+         border-top-right-radius: 15px;
+         box-shadow: 0px 3px 5px -5px rgba(0, 0, 0, 0.2);
+         .description {
+            font-size: 0.8rem;
+         }
+         .info {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 20px;
+            bottom: -$round-button-dimension/2;
+            height: $round-button-dimension;
+            width: $round-button-dimension;
+            border-radius: 50%;
+            background-color: $primary-color;
+            color: white;
+            cursor: pointer;
+         }
+      }
+      .card-main {
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-end;
+         align-items: flex-end;
+         background-color: rgba(0, 0, 0, 0.05);
+         border-radius: 0 0 15px 15px;
+         .details {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 25px;
+            span {
+               font-size: 0.8rem;
+               font-style: italic;
+               text-align: right;
+            }
+         }
+      }
+      .right-popup-container {
+         h2 {
+            margin-bottom: 50px;
+         }
+         .content-block {
+            margin-bottom: 40px;
+         }
+         .text-input-container {
+            label {
+               background-color: white;
+            }
+         }
+      }
+   }
+}
+@media (max-width : $css-breakpoint--xl) {
+   .cardContainer {
+      :global {
+         .card-header {
+            .info {
+               bottom: -60px;
+            }
+         }
+      }
+   }
+}
+@media (max-width : $css-breakpoint--lg) {
+   .cardContainer {
+      :global {
+         min-width: 100%;
+            .card-header {
+            .info {
+               height: 45px;
+               width: 45px;
+            }
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--m) {
+   .cardContainer  {
+      :global {
+         .card-main {
+            height: 300px !important;
+         }
+      }
+   }
+}
+@media (max-width: $css-breakpoint--s) {
+   .cardContainer  {
+      :global {
+         max-width: 100%;
+         min-width: 100%;
+         .card-main {
+            height: 300px !important;
+         }
+         .card-header {
+            height: auto !important;
+         }
+      }
+   }
+}
