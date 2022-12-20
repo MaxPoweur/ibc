@@ -1,31 +1,33 @@
 .ContactsTabContainer {
-   display: flex;
-   justify-content: center;
-   column-gap: 30px;
    :global {
-      .card {
-         h3 {
-            margin-bottom: 30px;
-         }
-         position: relative;
+      .cards {
          display: flex;
-         flex-direction: column;
-         align-items: center;
-         flex: 1;
-         padding: 40px 60px;
-         padding-bottom: 50px;
-         max-width: 550px;
-         .input-container {
-            margin-bottom: 20px;
-         }
-         .form {
-            width: 100%;
-         }
-         .button-container {
-            padding-right: 60px;
-            padding-left: 60px;
-            position: absolute;
-            bottom: -25px;
+         justify-content: center;
+         column-gap: 30px;
+         .card {
+            h3 {
+               margin-bottom: 30px;
+            }
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            padding: 40px 60px;
+            padding-bottom: 50px;
+            max-width: 550px;
+            .input-container {
+               margin-bottom: 20px;
+            }
+            .form {
+               width: 100%;
+            }
+            .button-container {
+               padding-right: 60px;
+               padding-left: 60px;
+               position: absolute;
+               bottom: -25px;
+            }
          }
       }
    }

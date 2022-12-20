@@ -1,8 +1,6 @@
-import { createRef, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Button from '../Button/Button';
-import Textarea from '../Textarea/Textarea';
 import styles from './Upload.module.scss';
-import { ButtonStyle } from '../Button/Button';
 
 interface UploadProps {
    name: string;
@@ -32,7 +30,6 @@ const Upload = (props: UploadProps) => {
             <i>Veuillez télécharger un compte-rendu via le bouton ci-dessous.</i>
          }
          <Button
-            style={ButtonStyle.REGULAR}
             onClick={() => fileInputRef.current?.click()}
          >
             <>

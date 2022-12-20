@@ -15,6 +15,8 @@ import RadioBoxes from '../../../../components/globals/RadioBoxes/RadioBoxes';
 import { AiFillStar } from 'react-icons/ai';
 import Textarea from '../../../../components/globals/Textarea/Textarea';
 import Checkbox from '../../../../components/globals/Checkbox/Checkbox';
+import { BsArchive } from 'react-icons/bs';
+import MyActivitiesBar from '../../../../components/pages/activities/MyActivitiesBar/MyActivitiesBar';
 
 
 function MySpace() {
@@ -39,36 +41,7 @@ function MySpace() {
       <MessageCard title="Sophie,">
          <span>Votre entretien annuel approche ! il est temps de mettre à jour vos activités et compétences, en ajoutant ou modifiant le caractère d'importance de celles déjà renseignées.</span>
       </MessageCard>
-      <div className="activities-block">
-         <div className="left">
-            <div className="title">
-               <h2>Mes Activités</h2>
-               <BadgeCount>
-                  15
-               </BadgeCount>
-            </div>
-            <div className="description">
-               <span>Sélectionnez ou recherchez une activité pour afficher ci-après ses compétences métiers et <u>soft skills</u> associés.</span>
-            </div>
-         </div>
-         <div className="right">
-            <div className="select-box">
-               <SelectInput
-                  name="language"
-                  placeholder="Toutes mes activités"
-                  options={[
-                     { label: 'Activité A', value: 'a' },
-                     { label: 'Activité B', value: 'b' },
-                     { label: 'Activité C', value: 'c' },
-                  ]}
-               />
-            </div>
-            <Button className="add-button" style={ButtonStyle.REGULAR}>
-               <BiPlusCircle size={20} color='#c7c7c7' />
-               <span>Ajouter une activité</span>
-            </Button>
-         </div>
-      </div>
+      <MyActivitiesBar />
 
       <div className="cards-slider-container">
          <div className="header">
@@ -131,6 +104,13 @@ function MySpace() {
                <RadioBoxes
                   name="score"
                   options={[
+                     {
+                        label: <div className="label-container">
+                           Obsolète
+                           <BsArchive className={`icon`} style={{marginLeft: '6px'}} />
+                        </div>,
+                        value: 0,
+                     },
                      {
                         label: <div className="label-container">
                            Utile

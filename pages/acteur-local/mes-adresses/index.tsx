@@ -10,8 +10,10 @@ import VisitCard from '../../../components/pages/visits/VisitCard/VisitCard';
 import { useDataContext } from '../../../contexts/data/useDataContext';
 import { CompanyType, VisitType } from '../../../defs/types';
 import styles from './my-addresses.module.scss';
+import { useRouter } from 'next/router';
 
 const MyAddresses = () => {
+   const router = useRouter();
    const dataContext = useDataContext();
    const items = dataContext.data.companies;
    const visits = dataContext.data.visits;
@@ -105,6 +107,7 @@ const MyAddresses = () => {
                      breakpoints="no"
                      card={item => <VisitCard
                         visit={item}
+                        onClick={() => router.push(`/acteur-local/visites/${item.id}`)}
                      />}
                   />
                </div>

@@ -18,10 +18,13 @@ export interface CompanyType {
    fields: string[];
 }
 export interface UserType {
-   name: string,
+   firstname: string;
+   lastname: string;
    type: UserTypeEnum,
 }
 export interface VisitType {
+   id: string;
+   name: string;
    date: string;
    delayFromDate: string;
    object: string;
@@ -30,6 +33,7 @@ export interface VisitType {
    summary: string;
    files: number;
    company: CompanyType;
+   job: JobType;
 }
 
 export enum UserTypeEnum {

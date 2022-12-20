@@ -5,6 +5,19 @@
             text-align: center;
             font-size: 0.9rem;
          }
+         .close-icon-container {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            z-index: 1000;
+            &.white {
+               path {
+                  stroke: white;
+               }
+            }
+         }
       }
    }
 }

@@ -20,7 +20,6 @@ interface CardsSliderProps<SlideType> {
 const CardsSlider = <SlideType,>(props: CardsSliderProps<SlideType>) => {
    const itemsPerView = props.itemsPerView ?? 4;
    const breakpoint = props.breakpoints;
-   console.log(breakpoint);
    return (
       <div className={`${styles.CardsSliderContainer} cards-slider-container`}>
          {breakpoint == "yes" ? (

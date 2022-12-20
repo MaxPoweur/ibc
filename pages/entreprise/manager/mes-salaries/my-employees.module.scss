@@ -184,7 +184,6 @@ $round-button-dimension: 70px;
          position: fixed;
          display: flex;
          flex-direction: column;
-         justify-content: center;
          top: 0;
          right: 0;
          z-index: 2;
@@ -193,6 +192,9 @@ $round-button-dimension: 70px;
          padding: 50px 100px;
          background-color: $primary-bg-color;
          box-shadow: 0px 0 20px rgba(0, 0, 0, 0.2);
+         &.employee-popup {
+            justify-content: center;
+         }
          .employee-sheet-title {
             display: flex;
             flex-direction: row;
@@ -235,7 +237,7 @@ $round-button-dimension: 70px;
    .myEmployeesContainer {
       :global {
          .search-icon {
-            display:block
+            display: block;
          }
          .page-left {
             display: none;
@@ -248,10 +250,10 @@ $round-button-dimension: 70px;
                      .column {
                         &:last-child {
                            .gauge-container {
+                              width: 100%;
+                              .gauge {
                                  width: 100%;
-                                 .gauge {
-                                    width: 100%;
-                                 }
+                              }
                            }
                         }
                      }
@@ -285,7 +287,6 @@ $round-button-dimension: 70px;
          .right-popup-container {
             width: 90%;
             padding: 50px 40px;
-            text-align: center;
             .employee-sheet-title {
                justify-content: center;
             }
@@ -307,7 +308,8 @@ $round-button-dimension: 70px;
                }
                .rows {
                   .row {
-                     box-shadow: 6px 9px 16px 1px rgb(0 0 0 / 20%);
+                     background-color: white;
+                     box-shadow: 6px 9px 16px 1px rgb(0 0 0 / 5%);
                      border-radius: 15px;
                      padding: 30px 20px;
                      margin-right: 5px;
@@ -331,7 +333,7 @@ $round-button-dimension: 70px;
                         }
                         &:last-child {
                            position: absolute;
-                           right: 0px; 
+                           right: 0px;
                            top: 50%;
                            transform: translateY(-50%);
                            .gauge-container {

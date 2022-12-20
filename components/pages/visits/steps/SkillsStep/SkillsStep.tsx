@@ -17,6 +17,7 @@ import styles from './SkillsStep.module.scss';
 import _ from 'lodash';
 import SelectInput from '../../../../globals/SelectInput/SelectInput';
 import { BiPlusCircle } from 'react-icons/bi';
+import MyActivitiesBar from '../../../activities/MyActivitiesBar/MyActivitiesBar';
 
 interface SkillsStepProps {
 }
@@ -44,36 +45,7 @@ const SkillsStep = (props: SkillsStepProps) => {
          <h1 className="title-container">
             {job.name}
          </h1>
-         <div className="activities-block">
-            <div className="left">
-               <div className="title">
-                  <h2>Mes Activités</h2>
-                  <BadgeCount>
-                     15
-                  </BadgeCount>
-               </div>
-               <div className="description">
-                  <span>Sélectionnez ou recherchez une activité pour afficher ci-après ses compétences métiers et <u>soft skills</u> associés.</span>
-               </div>
-            </div>
-            <div className="right">
-               <div className="select-box">
-                  <SelectInput
-                     name="language"
-                     placeholder="Toutes mes activités"
-                     options={[
-                        { label: 'Activité A', value: 'a' },
-                        { label: 'Activité B', value: 'b' },
-                        { label: 'Activité C', value: 'c' },
-                     ]}
-                  />
-               </div>
-               <Button className="add-button" style={ButtonStyle.REGULAR}>
-                  <BiPlusCircle size={20} color='#c7c7c7' />
-                  <span>Ajouter une activité</span>
-               </Button>
-            </div>
-         </div>
+         <MyActivitiesBar />
          <div className="cards-slider-container">
             <div className="header">
                <div className="title-container">
@@ -153,7 +125,7 @@ const SkillsStep = (props: SkillsStepProps) => {
             }
          </div>
          {skillToEdit &&
-            <EditSkillPopup label={skillToEdit.label} onClose={() => setSkillToEdit(null)} />
+            <EditSkillPopup skill={skillToEdit} label={skillToEdit.label} onClose={() => setSkillToEdit(null)} />
          }
          {showAddSkillsPopup &&
             <BottomPopup className="add-skills-popup" onClose={() => setShowAddSkillsPopup(false)}>
@@ -204,6 +176,9 @@ const ActivitySkills = (props: ActivitySkillsProps) => {
    };
    const isSkillEnabled = (skillId: number) => {
       return skillsIdsToAdd.includes(skillId);
+   }
+   if (!skills || skills.length === 0) {
+      return null;
    }
    return <div className="activity-container">
       <h3>{activity.name}</h3>

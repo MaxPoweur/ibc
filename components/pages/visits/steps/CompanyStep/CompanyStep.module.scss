@@ -24,22 +24,6 @@
             }
          }
       }
-      .bottom-popup-container {
-         h3 {
-            margin-bottom: 40px;
-         }
-         .radio-boxes-container {
-            margin-bottom: 20px;
-         }
-         label {
-            background-color: white;
-         }
-         .button-container {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-         }
-      }
    }
 }
 @media (max-width: $css-breakpoint--m) {

@@ -129,54 +129,6 @@
             }
          }
       }
-      .activities-block {
-         display: flex;
-         flex-direction: row;
-         align-items: center;
-         margin-top: 20px;
-         margin-bottom: 40px;
-         padding: 20px;
-         border-radius: 15px;
-         background-color: #e4e4e4;
-         .left {
-            display: flex;
-            flex-direction: column;
-            .title {
-               display: flex;
-               flex-direction: row;
-               align-items: center;
-               h2 {
-                  margin-right: 20px;
-                  margin-bottom: 0;
-               }
-            }
-         }
-         .right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-            border-radius: 100px;
-            padding: 15px 15px;
-            margin-left: 50px;
-            background-color: #bebebe;
-            .select-box {
-               margin-right: 30px;
-               .select-input-container {
-                  background-color: white;
-                  width: 400px;
-               }
-            }
-            .add-button {
-               display: flex;
-               align-items: center;
-               white-space: nowrap;
-               span {
-                  margin-left: 10px;
-               }
-            }
-         }
-      }
    }
 }
 @media (max-width: $css-breakpoint--xl) {
@@ -186,15 +138,6 @@
             flex-direction: column;
             .title-container {
                margin-bottom: 20px;
-            }
-         }
-         .activities-block {
-            flex-direction: column;
-            .left {
-               margin-bottom: 10px;
-            }
-            .right {
-               margin-left: 0;
             }
          }
       }
@@ -214,7 +157,7 @@
             .form-container {
                h2 {
                   display: block;
-                  font-weight: 500;
+                  font-weight: 600;
                }
                .activities {
                   .activity-container {
@@ -249,30 +192,6 @@
                }
             }
          }
-         .activities-block {
-            .right {
-               justify-content: center;
-               background-color: unset;
-               width: 100%;
-               flex-direction: column;
-               padding: 15px 0;
-               .select-box {
-                  width: 100%;
-                  margin-right: 0;
-                  margin-bottom: 20px;
-                  .input-container {
-                     width: 100%;
-                  }
-               }
-               .button-container {
-                  width: 100%;
-                  button {
-                     padding: 0;
-                     width: 100%;
-                  }
-               }
-            }
-         }
       }
    }
 }
@@ -283,7 +202,7 @@
             .form-container {
                h2 {
                   display: block;
-                  font-weight: 500;
+                  font-weight: 600;
                   font-size: 1.6rem;
                }
                .activities {

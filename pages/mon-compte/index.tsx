@@ -10,8 +10,16 @@ import { BsFileEarmarkPdfFill } from 'react-icons/bs';
 import { BiTrash } from 'react-icons/bi';
 import { AiFillFileExcel, AiFillFileText, AiFillFileWord } from 'react-icons/ai';
 import Button from '../../components/globals/Button/Button';
+import { useState } from 'react';
+import RightPopup from '../../components/globals/RightPopup/RightPopup';
+import TextInput from '../../components/globals/TextInput/TextInput';
+import { useDataContext } from '../../contexts/data/useDataContext';
 
 const MyAccount = () => {
+   const dataContext = useDataContext();
+   const user = dataContext.data.user;
+   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+   const [isEditCompanyPopupOpen, setIsEditCompanyPopupOpen] = useState(false);
    const files = [
       {
          name: 'Export_fichiers.csv',
@@ -54,7 +62,7 @@ const MyAccount = () => {
                   <h3>Mon Profil</h3>
                </div>
                <Card>
-                  <div className="title">NOM Prénom</div>
+                  <div className="title">{user.lastname} {user.firstname}</div>
                   <div className="subtitle">Responsable de formation</div>
                   <div className="image">
                      <Image
@@ -64,7 +72,10 @@ const MyAccount = () => {
                         height="110px"
                      />
                   </div>
-                  <Button className="edit-icon" width='35'>
+                  <Button className="edit-icon" width='35' onClick={() => {
+                     setIsEditCompanyPopupOpen(false);
+                     setIsEditProfilePopupOpen(true);
+                  }}>
                      <FaPencilAlt />
                   </Button>
                </Card>
@@ -76,7 +87,6 @@ const MyAccount = () => {
                <Card>
                   <div className="structure-informations">
                      <div className="structure-name">Structure</div>
-                     <div className="structure-type">Type de structure</div>
                      <div className="intervention">Champ d'intervention</div>
                      <div className="intervention address">10, Rue de la République, 45100 Orléans</div>
                   </div>
@@ -88,7 +98,10 @@ const MyAccount = () => {
                      ]}
                      enableGroupFilter={false}
                   />
-                  <Button className="edit-icon" width='35'>
+                  <Button className="edit-icon" width='35' onClick={() => {
+                     setIsEditProfilePopupOpen(false);
+                     setIsEditCompanyPopupOpen(true);
+                  }}>
                      <FaPencilAlt />
                   </Button>
                </Card>
@@ -142,6 +155,57 @@ const MyAccount = () => {
             </div>
          </div>
       </div>
+      {isEditProfilePopupOpen &&
+         <RightPopup onClose={() => setIsEditProfilePopupOpen(false)}>
+            <h2>Éditer mon profil</h2>
+            <br />
+            <TextInput
+               label="Nom"
+               name="lastname"
+               defaultValue={user.lastname}
+            />
+            <TextInput
+               label="Prénom"
+               name="firstname"
+               defaultValue={user.firstname}
+            />
+            <TextInput
+               label="Fonction"
+               name="function"
+               defaultValue="Responsable de formation"
+            />
+            <br /><br />
+            <Button onClick={() => setIsEditProfilePopupOpen(false)}>Enregistrer</Button>
+         </RightPopup>
+      }
+      {isEditCompanyPopupOpen &&
+         <RightPopup onClose={() => setIsEditCompanyPopupOpen(false)}>
+            <h2>Éditer ma structure</h2>
+            <br />
+            <TextInput
+               label="Raison sociale"
+               name="name"
+               defaultValue="Structure"
+            />
+            <TextInput
+               label="Description"
+               name="description"
+               defaultValue="Champ d'intervention"
+            />
+            <TextInput
+               name="address"
+               label="Adresse"
+               defaultValue="10, Rue de la République"
+            />
+            <TextInput
+               name="location"
+               label="CP - Ville"
+               defaultValue="45100 Orléans"
+            />
+            <br /><br />
+            <Button onClick={() => setIsEditCompanyPopupOpen(false)}>Enregistrer</Button>
+         </RightPopup>
+      }
    </div>
 }
 

@@ -18,6 +18,13 @@ const Steps = (props: StepsProps) => {
          setCurrentIndex(() => props.index);
       }
    }, [props.index]);
+   // watch currentIndex 
+   useEffect(() => {
+      window.scrollTo({
+         top: 0,
+         behavior: "smooth"
+     });
+   }, [currentIndex]);
    return (
       <div className={`${styles.StepsContainer}`}>
          <div className="steps">

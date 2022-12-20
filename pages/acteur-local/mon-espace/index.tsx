@@ -41,7 +41,7 @@ function MySpace() {
          <CardsSlider<VisitType>
             breakpoints="yes"
             items={items}
-            card={item => <VisitCard visit={item} />}
+            card={item => <VisitCard visit={item} onClick={() => router.push(`/acteur-local/visites/${item.id}`)} />}
             onCreate={() => router.push('/acteur-local/nouvelle-visite')}
          />
       </div>
@@ -60,7 +60,7 @@ function MySpace() {
          <CardsSlider<VisitType>
             breakpoints="yes"
             items={items}
-            card={item => <VisitCard visit={item} />}
+            card={item => <VisitCard visit={item} onClick={() => router.push(`/acteur-local/visites/${item.id}`)} />}
          />
       </div>
    </div>

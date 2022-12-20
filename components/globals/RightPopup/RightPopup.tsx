@@ -5,7 +5,7 @@ import styles from './RightPopup.module.scss';
 interface RightPopupProps {
    children: React.ReactNode
    className?: string;
-   onClose?: () => void;
+   onClose: () => void;
 }
 
 const RightPopup = (props: RightPopupProps) => {

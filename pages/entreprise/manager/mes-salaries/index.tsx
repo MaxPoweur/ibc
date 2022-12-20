@@ -13,6 +13,7 @@ import Gauge from '../../../../components/globals/Gauge/Gauge';
 import RightPopup from '../../../../components/globals/RightPopup/RightPopup';
 import { CgProfile } from 'react-icons/cg';
 import DatePicker from '../../../../components/globals/DatePicker/DatePicker';
+import SelectInput from '../../../../components/globals/SelectInput/SelectInput';
 
 const MyEmployees = () => {
    const dataContext = useDataContext();
@@ -24,16 +25,15 @@ const MyEmployees = () => {
    const [searchedPeriod, setSearchedPeriod] = useState('');
 
    const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const [isNewEmployeePopupOpen, setIsNewEmployeePopupOpen] = useState(false);
 
    const useWindowSize = () => {
       const [windowSize, setWindowSize] = useState<number | null>(null);
-   
       const handleResize = () => {
          if (window && window.innerWidth) {
             setWindowSize(window.innerWidth);
          }
       }
-   
       useEffect(() => {
          if (window) {
             window.addEventListener("resize", handleResize);
@@ -42,8 +42,7 @@ const MyEmployees = () => {
          }
       }, []);
       return windowSize;
-   } 
-   
+   }
    const size = useWindowSize();
    const [currentItem, setCurrentItem] = useState<EmployeeType | null>(null);
    const [currentItems, setCurrentItems] = useState<EmployeeType[]>([]);
@@ -55,11 +54,28 @@ const MyEmployees = () => {
          setCurrentItems(newItems);
       }
    }, [currentPage, items]);
-
+   useEffect(() => {
+      if (currentItem) {
+         setIsPopupOpen(false);
+         setIsNewEmployeePopupOpen(false);
+      }
+   }, [currentItem]);
+   useEffect(() => {
+      if (isPopupOpen) {
+         setCurrentItem(null);
+         setIsNewEmployeePopupOpen(false);
+      }
+   }, [isPopupOpen]);
+   useEffect(() => {
+      if (isNewEmployeePopupOpen) {
+         setCurrentItem(null);
+         setIsPopupOpen(false);
+      }
+   }, [isNewEmployeePopupOpen]);
    return (
       <div className={`${styles.myEmployeesContainer}`}>
          {currentItem &&
-            <RightPopup onClose={() => setCurrentItem(null)}>
+            <RightPopup className="employee-popup" onClose={() => setCurrentItem(null)}>
                <div className="employee-sheet-title">
                   <h1>Fiche salarié</h1>
                </div>
@@ -83,14 +99,14 @@ const MyEmployees = () => {
          }
          <div className="page-left">
             {size >= 1290 ? (
-            <div className="set-buttons">
-               <Button>
-                  <span><i><IoMdPersonAdd size={20} /></i>Ajouter un salarié</span>
-               </Button>
-               <Button>
-                  <span><i><HiUsers size={20} /></i>Import CSV</span>
-               </Button>
-            </div>
+               <div className="set-buttons">
+                  <Button onClick={() => setIsNewEmployeePopupOpen(() => true)}>
+                     <span><i><IoMdPersonAdd size={20} /></i>Ajouter un salarié</span>
+                  </Button>
+                  <Button onUpload={files => console.log('file', files[0])}>
+                     <span><i><HiUsers size={20} /></i>Import CSV</span>
+                  </Button>
+               </div>
             ) : (
                null
             )}
@@ -131,14 +147,14 @@ const MyEmployees = () => {
                <p>Sélectionez un salarié dans la liste ci-dessus pour accéder à sa fiche individuelle ou effectuez une recherche par métier / compétence.</p>
             </div>
             {size <= 1290 ? (
-            <div className="set-buttons">
-               <Button>
-                  <span><i><IoMdPersonAdd size={20} /></i>Ajouter un salarié</span>
-               </Button>
-               <Button>
-                  <span><i><HiUsers size={20} /></i>Import CSV</span>
-               </Button>
-            </div>
+               <div className="set-buttons">
+                  <Button onClick={() => setIsNewEmployeePopupOpen(() => true)}>
+                     <span><i><IoMdPersonAdd size={20} /></i>Ajouter un salarié</span>
+                  </Button>
+                  <Button>
+                     <span><i><HiUsers size={20} /></i>Import CSV</span>
+                  </Button>
+               </div>
             ) : (
                null
             )}
@@ -197,6 +213,32 @@ const MyEmployees = () => {
                      <Button>Consulter</Button>
                   </div>
                </div>
+            </RightPopup>
+         }
+         {isNewEmployeePopupOpen &&
+            <RightPopup onClose={() => setIsNewEmployeePopupOpen(false)}>
+               <h2>Ajouter un salarié</h2>
+               <br />
+               <TextInput
+                  label="Nom"
+                  name="lastname"
+               />
+               <TextInput
+                  label="Prénom"
+                  name="firstname"
+               />
+               <SelectInput
+                  name="skills"
+                  label="Compétences"
+                  options={[
+                     { label: 'Compétence A', value: 'a' },
+                     { label: 'Compétence B', value: 'b' },
+                     { label: 'Compétence C', value: 'c' },
+                  ]}
+                  creatable
+               />
+               <br /><br />
+               <Button onClick={() => setIsNewEmployeePopupOpen(false)}>Enregistrer</Button>
             </RightPopup>
          }
       </div>

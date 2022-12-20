@@ -61,13 +61,13 @@ const Topbar = () => {
                </div>
             </div>
             <div className="topbar-right">
-               {loggedIn && user && user.name ?
+               {loggedIn && user ?
                   <div className={`topbar-right-connected hide-responsive ${router.pathname == '/mon-compte' ? 'active' : ''}`}>
                      <Link href="/mon-compte">
                         <div className="user-container">
                            <div className="user-connected">
                               <span>Bonjour,</span>
-                              <span className="user-name">{user.name}</span>
+                              <span className="user-name">{user.lastname} {user.firstname}</span>
                            </div>
                            <div className="user-img">
                               <Image
@@ -229,12 +229,12 @@ const Topbar = () => {
                   </div>
                </div>
                : <span className='no-menu-text'>Observatoire des compétences attendues et particulières aux territoires de la Région Centre Val de Loire</span>}
-            {loggedIn && user && user.name ?
+            {loggedIn && user ?
                <Link href="/mon-compte">
                   <div className={`bottombar bottombar-connected ${router.pathname == '/mon-compte' ? 'active' : ''}`} onClick={toggleResponsiveMenu}>
                      <div className="user-connected">
                         <span>Bonjour,</span>
-                        <span className="user-name">{user.name}</span>
+                        <span className="user-name">{user.lastname} {user.firstname}</span>
                      </div>
                      <div className="user-img">
                         <Image

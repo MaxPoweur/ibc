@@ -6,6 +6,7 @@ import TextInput from '../../../../globals/TextInput/TextInput';
 import Upload from '../../../../globals/Upload/Upload';
 import styles from './CompanyStep.module.scss';
 import BottomPopup from '../../../../globals/BottomPopup/BottomPopup';
+import NewContactPopup from '../../../contacts/NewContactPopup/NewContactPopup';
 
 interface CompanyStepProps {
 }
@@ -37,7 +38,7 @@ const CompanyStep = (props: CompanyStepProps) => {
                   defaultValue="Jean Dupont"
                   disabled
                />
-               <Button style={ButtonStyle.REGULAR} onClick={() => setIsPopupOpen(true)}>Nouveau contact</Button>
+               <Button onClick={() => setIsPopupOpen(true)}>Nouveau contact</Button>
             </Card>
             <Card>
                <h3>Visite</h3>
@@ -69,45 +70,7 @@ const CompanyStep = (props: CompanyStepProps) => {
             </Card>
          </div>
          {isPopupOpen &&
-            <BottomPopup onClose={() => setIsPopupOpen(false)}>
-               <h3>Ajouter un contact</h3>
-               <RadioBoxes
-                  name="gender"
-                  options={[
-                     {
-                        label: 'Madame',
-                        value: 0,
-                     },
-                     {
-                        label: 'Monsieur',
-                        value: 1,
-                     },
-                  ]}
-                  defaultValue={0}
-                  inline
-               />
-               <TextInput
-                  name="firstname"
-                  label="Prénom"
-               />
-               <TextInput
-                  name="lastname"
-                  label="Nom"
-               />
-               <TextInput
-                  name="function"
-                  label="Fonction"
-               />
-               <TextInput
-                  name="email"
-                  label="E-mail"
-               />
-               <TextInput
-                  name="phone"
-                  label="Téléphone"
-               />
-               <Button onClick={() => setIsPopupOpen(false)}>Ajouter</Button>
-            </BottomPopup>
+            <NewContactPopup onClose={() => setIsPopupOpen(false)} />
          }
       </div>
    );

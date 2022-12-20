@@ -28,6 +28,7 @@
             margin-top: 10px;
             .star {
                font-size: 1.2rem;
+               color: $primary-color;
                &.unfilled {
                   color: #e4e4e4;
                }
@@ -43,7 +44,7 @@
             height: 45px;
             width: 45px;
             border-radius: 50px;
-            background-color: #707070;
+            background-color: #1d4278;
             color: white;
             font-size: 1.5rem;
          }

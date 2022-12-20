@@ -1,5 +1,9 @@
 $primary-color: #1d4278;
-$primary-color-hover: #152f56;
+$primary-color-hover: #112747;
+
+$primary-dark-color: #152f56;
+$primary-dark-color-hover: #0f223e;
+
 // text color
 $primary-text-color: #fff;
 $secondary-text-color: #000;
@@ -39,7 +43,7 @@ $full-page-no-footer: calc($full-height-no-topbar - $footer-height);
 
 $page-section-vertical-padding: 4.5rem;
 
-$main-font: "TTNorms", "Montserrat", sans-serif;
+$main-font: sans-serif;
 $secondary-font: "Poppins", sans-serif;
 
 $h1-size: 2.2rem;

@@ -11,12 +11,12 @@ interface DataType {
 
 const generateHardSkills = (count: number) => {
    let items: SkillType[] = [];
-   for(let i=0; i<count; i++) {
+   for (let i = 0; i < count; i++) {
       items.push({
          id: Math.floor(Math.random() * 1000000),
          enabled: Math.random() < 0.5,
-         label: 'Compétence ' + String.fromCharCode(65+Math.floor(Math.random() * 26)),
-         score: Math.floor(Math.random() * (3 + 1) -1) as any,
+         label: 'Compétence ' + String.fromCharCode(65 + Math.floor(Math.random() * 26)),
+         score: Math.floor(Math.random() * (3 + 1) - 1) as any,
          toTrain: Math.random() < 0.5,
          isBookmark: Math.random() < 0.5,
       });
@@ -25,12 +25,12 @@ const generateHardSkills = (count: number) => {
 }
 const generateSoftkills = (count: number) => {
    let items: SkillType[] = [];
-   for(let i=0; i<count; i++) {
+   for (let i = 0; i < count; i++) {
       items.push({
          id: Math.floor(Math.random() * 1000000),
          enabled: Math.random() < 0.5,
-         label: 'Soft skill ' + String.fromCharCode(65+Math.floor(Math.random() * 26)),
-         score: Math.floor(Math.random() * (3 + 1) -1) as any,
+         label: 'Soft skill ' + String.fromCharCode(65 + Math.floor(Math.random() * 26)),
+         score: Math.floor(Math.random() * (3 + 1) - 1) as any,
          toTrain: Math.random() < 0.5,
          isBookmark: Math.random() < 0.5,
       });
@@ -39,12 +39,12 @@ const generateSoftkills = (count: number) => {
 }
 const generateLanguages = (count: number) => {
    let items: SkillType[] = [];
-   for(let i=0; i<count; i++) {
+   for (let i = 0; i < count; i++) {
       items.push({
          id: Math.floor(Math.random() * 1000000),
          enabled: Math.random() < 0.5,
-         label: 'Langue ' + String.fromCharCode(65+Math.floor(Math.random() * 26)),
-         score: Math.floor(Math.random() * (3 + 1) -1) as any,
+         label: 'Langue ' + String.fromCharCode(65 + Math.floor(Math.random() * 26)),
+         score: Math.floor(Math.random() * (3 + 1) - 1) as any,
          toTrain: Math.random() < 0.5,
          isBookmark: false,
       });
@@ -53,11 +53,11 @@ const generateLanguages = (count: number) => {
 }
 const generateWorkingConditions = (count: number) => {
    let items: WorkingConditionType[] = [];
-   for(let i=0; i<count; i++) {
+   for (let i = 0; i < count; i++) {
       items.push({
          id: Math.floor(Math.random() * 1000000),
          enabled: Math.random() < 0.5,
-         label: 'Condition ' + String.fromCharCode(65+Math.floor(Math.random() * 26)),
+         label: 'Condition ' + String.fromCharCode(65 + Math.floor(Math.random() * 26)),
          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       });
    }
@@ -108,10 +108,10 @@ const activities: ActivityType[] = Array(2).fill({
       ...activity,
       id: Math.floor(Math.random() * 1000000),
       name: activity.name + ' ' + (index + 1),
-      hardSkills: generateHardSkills(3),
-      softSkills: generateSoftkills(3),
-      languages: generateLanguages(3),
-      workingConditions: generateWorkingConditions(3),
+      hardSkills: generateHardSkills(2),
+      softSkills: generateSoftkills(2),
+      languages: generateLanguages(2),
+      workingConditions: generateWorkingConditions(2),
    };
 });
 const jobs: JobType[] = Array(72).fill({
@@ -137,6 +137,8 @@ const employees: EmployeeType[] = Array(72).fill({
 });
 
 const visits: VisitType[] = Array(72).fill({
+   id: 0,
+   name: 'Visite',
    date: '19/10/2022',
    delayFromDate: 'Moins de 6 mois',
    object: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
@@ -145,13 +147,20 @@ const visits: VisitType[] = Array(72).fill({
    summary: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, natus. Iure culpa et quia veniam blanditiis fuga illum eius temporibus! Eum quibusdam totam.',
    files: 5,
 }).map((visit, index) => {
-   return { ...visit, company: companies[index] };
+   return {
+      ...visit,
+      id: Math.floor(Math.random() * 1000000),
+      name: visit.name + ' ' + (index + 1),
+      company: companies[index],
+      job: jobs[index]
+   };
 });
 
 export const defaultData: DataType = {
    user: {
-      name: 'Sophie Stikker',
-      type: UserTypeEnum.LOCAL_ACTOR,
+      firstname: 'Sophie',
+      lastname: 'Stikker',
+      type: UserTypeEnum.MANAGER,
    },
    companies,
    visits,

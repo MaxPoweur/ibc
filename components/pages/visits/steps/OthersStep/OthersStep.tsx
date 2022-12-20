@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
+import { BsArchive } from 'react-icons/bs';
 import { useDataContext } from '../../../../../contexts/data/useDataContext';
 import { SkillType, WorkingConditionType } from '../../../../../defs/types';
 import BadgeCount from '../../../../globals/BadgeCount/BadgeCount';
@@ -13,12 +14,14 @@ import CardsSlider from '../../../../globals/Slider/Slider';
 import Textarea from '../../../../globals/Textarea/Textarea';
 import SkillCard from '../../../jobs/SkillCard/SkillCard';
 import WorkingConditionCard from '../../../jobs/WorkingConditionCard/WorkingConditionCard';
+import EditSkillPopup from '../../../skills/EditSkillPopup/EditSkillPopup';
 import styles from './OthersStep.module.scss';
 
 interface OthersStepProps {
 }
 const OthersStep = (props: OthersStepProps) => {
    const dataContext = useDataContext();
+   const [skillToEdit, setSkillToEdit] = useState<null | SkillType>(null);
    const [showAddLanguagePopup, setShowAddLanguagePopup] = useState(false);
    const [showAddWorkingConditionPopup, setShowAddWorkingConditionPopup] = useState(false);
    const job = dataContext.data.jobs[0];
@@ -46,7 +49,7 @@ const OthersStep = (props: OthersStepProps) => {
             <CardsSlider<SkillType>
                breakpoints="yes"
                items={languages.sort((a, b) => b.score - a.score)}
-               card={item => <SkillCard skill={item} />}
+               card={item => <SkillCard skill={item} onClick={() => setSkillToEdit(item)} />}
                onCreate={() => setShowAddLanguagePopup(true)}
             />
          </div>
@@ -90,6 +93,13 @@ const OthersStep = (props: OthersStepProps) => {
                <RadioBoxes
                   name="score"
                   options={[
+                     {
+                        label: <div className="option-container">
+                           Obsolète
+                           <BsArchive className={`icon`} />
+                        </div>,
+                        value: 0,
+                     },
                      {
                         label: <div className="option-container">
                            Utile
@@ -136,6 +146,9 @@ const OthersStep = (props: OthersStepProps) => {
                />
                <Button onClick={() => setShowAddWorkingConditionPopup(false)}>Ajouter</Button>
             </BottomPopup>
+         }
+         {skillToEdit &&
+            <EditSkillPopup skill={skillToEdit} label={skillToEdit.label} onClose={() => setSkillToEdit(null)} />
          }
       </div>
    );

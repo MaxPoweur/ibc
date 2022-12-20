@@ -30,12 +30,12 @@ h2 {
 }
 h3 {
    font-size: $h3-size;
-   font-weight: 500;
+   font-weight: 600;
    color: $secondary-text-color;
 }
 h4 {
    font-size: $h4-size;
-   font-weight: 500;
+   font-weight: 600;
    color: $secondary-text-color;
 }
 p {
@@ -55,7 +55,7 @@ a {
 }
 b,
 strong {
-   font-weight: 500;
+   font-weight: 600;
 }
 
 ::-webkit-scrollbar {
@@ -156,7 +156,7 @@ strong {
                      font-weight: 300;
                   }
                   .user-name {
-                     font-weight: 500;
+                     font-weight: 600;
                      font-size: 14px;
                   }
                }
@@ -273,8 +273,8 @@ strong {
             width: 100%;
             padding: 15px;
             background-color: #464646;
-            border-left: white solid 5px;
-            box-shadow: 20px -19px 40px 0px #de171a40;
+            border-left: white solid 2px;
+            box-shadow: 20px -19px 40px 0px #de171a42;
             gap: 10px;
             cursor: pointer;
             .user-connected {
@@ -288,7 +288,7 @@ strong {
                   font-weight: 300;
                }
                .user-name {
-                  font-weight: 500;
+                  font-weight: 600;
                   font-size: 14px;
                }
             }

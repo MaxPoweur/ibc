@@ -59,8 +59,9 @@ const Registration = () => {
          return {
             ...dataContext.data,
             user: {
-               type: UserTypeEnum.MANAGER,
-               name: 'Sophie Stikker',
+               type: UserTypeEnum.LOCAL_ACTOR,
+               firstname: 'Sophie',
+               lastname: 'Stikker',
             },
          }
       });
@@ -91,12 +92,15 @@ const Registration = () => {
       if (signupData.passwordConfirmation.length === 0 || signupData.passwordConfirmation !== signupData.password) {
          submitErrors.push('password-confirmation');
       }
+      const type = signupData.isCompany ? UserTypeEnum.MANAGER : UserTypeEnum.EMPLOYEE;
       dataContext.setData(() => {
          return {
             ...dataContext.data,
             user: {
-               type: UserTypeEnum.MANAGER,
+               type,
                name: signupData.firstname + ' ' + signupData.lastname,
+               firstname: signupData.firstname,
+               lastname: signupData.lastname,
             },
          }
       });

@@ -2,27 +2,65 @@
    display: flex;
    justify-content: center;
    :global {
-      .ant-pagination-prev, .ant-pagination-item-link, .ant-pagination-item, .ant-pagination-item-container {
+      .ant-pagination-item,
+      .ant-pagination-item-container,
+      .ant-pagination-next,
+      .ant-pagination-prev {
+         display: flex;
+         align-items: center;
+         justify-content: center;
          border-radius: 50px;
+         width: 26px;
+         height: 32px;
          margin-right: 25px;
-         background-color: rgba(0, 0, 0, 0);
-         //color: black;
          border: none;
          &:hover {
-         background-color: rgba(0, 0, 0, 0.10);
+            background-color: $primary-color-hover;
             a {
-               color: black;
+               color: white;
+            }
+         }
+      }
+      .ant-pagination-next, .ant-pagination-prev {
+         .ant-pagination-item-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            width: 40px;
+            height: 30px;
+            border: 0;
+            &:hover {
+               background-color: $primary-color-hover;
+               svg {
+                  fill: white;
+               }
+            }
+         }
+      }
+      .ant-pagination-jump-prev, .ant-pagination-jump-next {
+         .ant-pagination-item-container {
+            width: 32px;
+            &:hover {
+               background-color: $primary-color-hover;
+               span {
+                  color: white;
+               }
+               svg {
+                  fill: white;
+                  color: white;
+               }
             }
          }
       }
       .ant-pagination-item-active {
-         background-color: #5c5c5c;
+         background-color: $primary-color;
          a {
             color: white;
          }
       }
-
-      .ant-pagination-options, .ant-pagination-item-ellipsis {
+      .ant-pagination-options,
+      .ant-pagination-item-ellipsis {
          display: none;
       }
    }
@@ -30,11 +68,14 @@
 @media (max-width: $css-breakpoint--s) {
    .paginationContainer {
       :global {
-         .ant-pagination-prev, .ant-pagination-item-link, .ant-pagination-item, .ant-pagination-item-container {
+         .ant-pagination-prev,
+         .ant-pagination-item-link,
+         .ant-pagination-item,
+         .ant-pagination-item-container {
             margin-right: 5px;
          }
          .ant-pagination-item {
-            min-width: 29px; 
+            min-width: 29px;
          }
       }
    }

@@ -37,7 +37,7 @@
                position: absolute;
                height: 60px;
                width: 60px;
-               background-color: #5e5e5e;
+               background-color: $primary-color;
                color: white;
                border-radius: 50px;
                top: -30px;
@@ -49,13 +49,13 @@
                cursor: pointer;
             }
             &.active {
-               background-color: #464646;
+               background-color: $primary-color-hover;
                border-radius: 15px 15px 0 0;
                .title, .subtitle {
                   color: white;
                }
                .items-count {
-                  background-color: #929292;
+                  background-color: $primary-color;
                }
                .edit-icon {
                   position: absolute;
@@ -76,7 +76,7 @@
                   height: 0;
                   border-style: solid;
                   border-width: 0 90px 30px 0;
-                  border-color: transparent #464646 transparent transparent;
+                  border-color: transparent $primary-color-hover transparent transparent;
                }
                &:after {
                   content: "";
@@ -87,7 +87,7 @@
                   height: 0;
                   border-style: solid;
                   border-width: 30px 90px 0 0;
-                  border-color: #464646 transparent transparent transparent;
+                  border-color: $primary-color-hover transparent transparent transparent;
                }
             }
          }

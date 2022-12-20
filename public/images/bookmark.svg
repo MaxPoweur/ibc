@@ -10,7 +10,7 @@
   </defs>
   <g id="référentiel" transform="translate(-379 6)">
     <g transform="matrix(1, 0, 0, 1, 379, -6)" filter="url(#Tracé_12)">
-      <path id="Tracé_12-2" data-name="Tracé 12" d="M0,0H22V45.333L11.208,38.358,0,45.333Z" transform="translate(9 6)" fill="#676767"/>
+      <path id="Tracé_12-2" data-name="Tracé 12" d="M0,0H22V45.333L11.208,38.358,0,45.333Z" transform="translate(9 6)" fill="#1d4278"/>
     </g>
     <path id="Tracé_13" data-name="Tracé 13" d="M0,0,4.876,5.115H0Z" transform="translate(410)"/>
   </g>
